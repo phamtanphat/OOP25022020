@@ -2,11 +2,14 @@ package com.example.oop25022020;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnListenerClick{
+
+    OnListenerClick onListenerClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,21 +29,34 @@ public class MainActivity extends AppCompatActivity {
 //        User user = new User();
 //        user.name = "Client 1";
 //        user.showName();
+        // Tính trừu tượng
+
+        // Tính đa hình
         // + Tên phương thức giống nhau chỉ khác nhau thân hàm
         // + 2 Phương thức này phải nằm 2 nơi
 
         // Phương thức nạp chồng
 
         // Tính đóng gói
-        // Tính trừu tượng
-        // Tính đa hình
+        //pham vi truy cập public , private , protected, default
         // Quan hệ has A
-        showToast(R.string.app_name);
+//        showToast(R.string.app_name);
+
+        onListenerClick = this;
+
+        Button button = new Button(this);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onListenerClick.onClick();
+            }
+        });
+        button.performClick();
     }
-    public void showToast(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-    public void showToast(int resId){
-        Toast.makeText(this, getResources().getString(resId), Toast.LENGTH_SHORT).show();
+
+    @Override
+    public void onClick() {
+        Log.d("BBB","Đã click");
     }
 }

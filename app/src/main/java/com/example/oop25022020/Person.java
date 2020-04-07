@@ -2,7 +2,7 @@ package com.example.oop25022020;
 
 import android.util.Log;
 
-public class Person {
+public class Person extends BaseModel{
     String name;
     int age;
     String address;
@@ -10,9 +10,7 @@ public class Person {
     int city_id;
     int state_code = 0;
 
-    public void showName(){
-        Log.d("BBB",this.name);
-    }
+
     // alt + insert
     //constructor :
 //    public Person(String name, int age, String address, int phone, int city_id, int state_code) {
