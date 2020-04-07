@@ -1,6 +1,7 @@
 package com.example.oop25022020;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 //        nguyenvana.experience = "1";
 //        Log.d("BBB", nguyenvana.name + " " + nguyenvana.age);
         Person nguyenvanA = new Person("Nguyen Van A",20,"Quân 10",1234567891,200, 700000);
+        nguyenvanA.setName("");
+
+        Log.d("BBB",nguyenvanA.getName());
 
 
     }
